@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+    vue_container:
+        image: vue_image:1.0
+        container_name: vue_container
+        command: /bin/sh -c "while sleep 1000; do :; done"
+        ports:
+            - "9999:9999"
+        volumes:
+            - ../:/opt/vue_demo

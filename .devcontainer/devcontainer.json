@@ -1,0 +1,16 @@
+{
+	"name": "Vue Demo",
+	"dockerComposeFile": [
+		"../docker/docker-compose.yml",
+	],
+	"service": "vue_container",
+	"workspaceFolder": "/opt/vue_demo/vue_demo",
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/zsh",
+	},
+	"extensions": [
+		"octref.vetur",
+		"visualstudioexptteam.vscodeintellicode",
+	],
+	"shutdownAction": "stopCompose",
+}
