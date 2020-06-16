@@ -8,4 +8,4 @@ services:
         ports:
             - "9999:9999"
         volumes:
-            - ../:/opt/vue_demo
+            - ../:/opt/vue_project

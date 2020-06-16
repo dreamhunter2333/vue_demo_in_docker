@@ -16,15 +16,16 @@ ENV SHELL=/bin/zsh
 RUN git clone git://github.com/robbyrussell/oh-my-zsh.git --depth=1 ~/.oh-my-zsh && \
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install gnupg -y
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install nodejs npm -y
-RUN npm install -g npm --registry=https://registry.npm.taobao.org
-RUN npm install n -g --registry=https://registry.npm.taobao.org
-RUN export N_NODE_MIRROR=https://npm.taobao.org/mirrors/node && n 13
-RUN node -v && npm -v
-RUN npm install -g @vue/cli --registry=https://registry.npm.taobao.org
+RUN apt-get install yarn -y
+RUN yarn config set registry https://registry.npm.taobao.org
+RUN yarn global add @vue/cli
 RUN apt-get update -y && apt-get upgrade -y
-RUN rm -rf /root/.cache/ /opt/install
+RUN rm -rf /root/.cache/
 ENTRYPOINT []
 
-WORKDIR /opt/vue_demo/
+WORKDIR /opt/vue_project/
