@@ -1,10 +1,10 @@
 {
-	"name": "Vue Demo",
+	"name": "Vue Chen",
 	"dockerComposeFile": [
 		"../docker/docker-compose.yml",
 	],
 	"service": "vue_container",
-	"workspaceFolder": "/opt/vue_demo/vue_demo",
+	"workspaceFolder": "/opt/vue_project/vue_xiao",
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/zsh",
 	},
